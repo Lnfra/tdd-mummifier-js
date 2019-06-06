@@ -4,7 +4,10 @@ const REPLACEMENT = "mummy";
 class StringMummifier {
   transform(word) {
     if (this.isVowelLessTan30Percent(word)) return word;
+    return this.replaceVowels(word);
+  }
 
+  replaceVowels(word) {
     const letterArray = word.split("");
     return letterArray
       .map(letter => {
