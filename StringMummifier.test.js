@@ -33,6 +33,14 @@ describe("String Mummifier", () => {
     checkMummified("blA", "blmummy");
   });
 
+  it("should raise an error if input is undefined", () => {
+    const mummifier = new StringMummifier();
+    const t = () => {
+      mummifier.transform();
+    };
+    expect(t).toThrow(new Error("Please input a string"));
+  });
+
   function checkMummified(input, expected) {
     const mummifier = new StringMummifier();
     expect(mummifier.transform(input)).toEqual(expected);
