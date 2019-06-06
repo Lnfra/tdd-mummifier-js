@@ -3,13 +3,16 @@ const REPLACEMENT = "mummy";
 
 class StringMummifier {
   transform(word) {
-    const letterArray = word.split("");
-    return letterArray
-      .map(letter => {
-        if (!this.isVowel(letter)) return letter;
-        return REPLACEMENT;
-      })
-      .join("");
+    let mummified = "";
+
+    for (let letter of word) {
+      if (this.isVowel(letter)) {
+        mummified += REPLACEMENT;
+      } else {
+        mummified += letter;
+      }
+    }
+    return mummified;
   }
 
   isVowel(letter) {
