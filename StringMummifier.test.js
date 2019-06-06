@@ -29,6 +29,10 @@ describe("String Mummifier", () => {
     checkMummified("blaaha", "blmummyhmummy");
   });
 
+  it("should mummify vowels which are capitalised", () => {
+    checkMummified("blA", "blmummy");
+  });
+
   function checkMummified(input, expected) {
     const mummifier = new StringMummifier();
     expect(mummifier.transform(input)).toEqual(expected);
