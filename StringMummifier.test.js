@@ -10,4 +10,9 @@ describe("String Mummifier", () => {
     const mummifier = new StringMummifier();
     expect(mummifier.transform("str")).toEqual("str");
   });
+
+  it("should mummify a vowel", () => {
+    const mummifier = new StringMummifier();
+    expect(mummifier.transform("a")).toEqual("mummy");
+  });
 });
