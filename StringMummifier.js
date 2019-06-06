@@ -1,6 +1,6 @@
 class StringMummifier {
   transform() {
-    return undefined;
+    return "";
   }
 }
 
