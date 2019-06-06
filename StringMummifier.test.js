@@ -17,6 +17,10 @@ describe("String Mummifier", () => {
     checkMummified("bla", "blmummy");
   });
 
+  it("should not mummify word with less than 30% vowels", () => {
+    checkMummified("blah", "blah");
+  });
+
   function checkMummified(input, expected) {
     const mummifier = new StringMummifier();
     expect(mummifier.transform(input)).toEqual(expected);
