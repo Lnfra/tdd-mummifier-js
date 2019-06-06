@@ -21,6 +21,10 @@ describe("String Mummifier", () => {
     checkMummified("blah", "blah");
   });
 
+  it("should mummify continuous vowels only once", () => {
+    checkMummified("blaa", "blmummy")
+  })
+
   function checkMummified(input, expected) {
     const mummifier = new StringMummifier();
     expect(mummifier.transform(input)).toEqual(expected);
