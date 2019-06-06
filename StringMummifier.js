@@ -1,11 +1,18 @@
+const VOWELS = "aeiou";
+const REPLACEMENT = "mummy";
+
 class StringMummifier {
   transform(word) {
     for (let letter of word) {
-      if ("aeiou".includes(letter)) {
-        return "mummy";
+      if (this.isVowel(letter)) {
+        return REPLACEMENT;
       }
     }
     return word;
+  }
+
+  isVowel(letter) {
+    return VOWELS.includes(letter);
   }
 }
 
