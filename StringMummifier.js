@@ -3,6 +3,8 @@ const REPLACEMENT = "mummy";
 
 class StringMummifier {
   transform(word) {
+    if (this.isVowelLessTan30Percent(word)) return word;
+
     const letterArray = word.split("");
     return letterArray
       .map(letter => {
@@ -10,6 +12,12 @@ class StringMummifier {
         return REPLACEMENT;
       })
       .join("");
+  }
+
+  isVowelLessTan30Percent(word) {
+    const vowelCount = word.split("").filter(letter => this.isVowel(letter))
+      .length;
+    return vowelCount / word.length < 0.3;
   }
 
   isVowel(letter) {
