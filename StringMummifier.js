@@ -27,7 +27,7 @@ class StringMummifier {
   }
 
   isVowel(letter) {
-    return VOWELS.includes(letter);
+    return VOWELS.includes(letter.toLowerCase());
   }
 }
 
