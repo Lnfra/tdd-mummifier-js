@@ -3,6 +3,7 @@ const REPLACEMENT = "mummy";
 
 class StringMummifier {
   transform(word) {
+    if (word === undefined) throw new Error("Please input a string");
     if (this.isVowelLessTan30Percent(word)) return word;
     return this.replaceVowels(word);
   }
