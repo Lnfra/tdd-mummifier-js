@@ -15,4 +15,9 @@ describe("String Mummifier", () => {
     const mummifier = new StringMummifier();
     expect(mummifier.transform("a")).toEqual("mummy");
   });
+
+  it("should mummify consonants and a vowel", () => {
+    const mummifier = new StringMummifier();
+    expect(mummifier.transform("bla")).toEqual("blmummy");
+  });
 });
